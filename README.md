@@ -33,5 +33,4 @@ The -v maps your host docker machine Kubernetes configuration directory (~/.kube
 
 ## Build
 
-For doing a manual local build of the image:
-`make docker_build`
+For doing a manual local build of the image run `make docker`.
