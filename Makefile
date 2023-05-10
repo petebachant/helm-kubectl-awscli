@@ -15,6 +15,7 @@ docker:
 	  --build-arg KUBE_VERSION=$(KUBE_VERSION) \
 	  --build-arg HELM_VERSION=$(HELM_VERSION) \
 	  --build-arg YQ_VERSION=$(YQ_VERSION) \
+	  --platform linux/amd64 \
 	  -t $(DOCKER_IMAGE):$(DOCKER_TAG) -t $(DOCKER_IMAGE):latest .
 
 push-docker:

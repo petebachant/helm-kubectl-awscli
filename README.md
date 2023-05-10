@@ -1,6 +1,6 @@
 # helm-kubernetes Docker hub image with the AWS CLI
 
-[![ci](https://github.com/petebachant/helm-kubectl-awscli/actions/workflows/image-build-push.yaml/badge.svg)](https://github.com/dtzar/helm-kubectl/actions/workflows/image-build-push.yaml)
+[![ci](https://github.com/petebachant/helm-kubectl-awscli/actions/workflows/image-build-push.yaml/badge.svg)](https://github.com/petebachant/helm-kubectl-awscli/actions/workflows/image-build-push.yaml)
 [![Docker Stars](https://img.shields.io/docker/stars/petebachant/helm-kubectl-awscli.svg?style=flat)](https://hub.docker.com/r/petebachant/helm-kubectl-awscli/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/petebachant/helm-kubectl-awscli.svg?style=flat)](https://hub.docker.com/r/petebachant/helm-kubectl-awscli/)
 
