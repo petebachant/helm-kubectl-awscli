@@ -11,7 +11,7 @@ DOCKER_IMAGE ?= petebachant/helm-kubectl-awscli
 DOCKER_TAG ?= `git rev-parse --abbrev-ref HEAD`
 
 docker_build:
-	@docker buildx build \
+	@docker build \
 	  --build-arg KUBE_VERSION=$(KUBE_VERSION) \
 	  --build-arg HELM_VERSION=$(HELM_VERSION) \
 	  --build-arg YQ_VERSION=$(YQ_VERSION) \

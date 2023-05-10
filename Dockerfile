@@ -8,7 +8,7 @@ ARG TARGETARCH
 ARG YQ_VERSION
 
 RUN apk -U upgrade \
-    && apk add --no-cache ca-certificates bash git openssh curl gettext jq \
+    && apk add --no-cache ca-certificates bash git openssh curl gettext jq python3 groff mandoc \
     && wget -q https://storage.googleapis.com/kubernetes-release/release/v${KUBE_VERSION}/bin/${TARGETOS}/${TARGETARCH}/kubectl -O /usr/local/bin/kubectl \
     && wget -q https://get.helm.sh/helm-v${HELM_VERSION}-${TARGETOS}-${TARGETARCH}.tar.gz -O - | tar -xzO ${TARGETOS}-${TARGETARCH}/helm > /usr/local/bin/helm \
     && wget -q https://github.com/mikefarah/yq/releases/download/v${YQ_VERSION}/yq_${TARGETOS}_${TARGETARCH} -O /usr/local/bin/yq \
@@ -21,7 +21,7 @@ RUN apk -U upgrade \
 
 # From https://stackoverflow.com/a/62555259
 ENV PYTHONUNBUFFERED=1
-RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools awscli
 
