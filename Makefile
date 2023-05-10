@@ -1,4 +1,4 @@
-default: docker_build
+default: docker
 include .env
 
 # Note:
@@ -10,13 +10,13 @@ $(foreach v,$(VARS),$(eval $(shell echo export $(v)="$($(v))")))
 DOCKER_IMAGE ?= petebachant/helm-kubectl-awscli
 DOCKER_TAG ?= `git rev-parse --abbrev-ref HEAD`
 
-docker_build:
+docker:
 	@docker build \
 	  --build-arg KUBE_VERSION=$(KUBE_VERSION) \
 	  --build-arg HELM_VERSION=$(HELM_VERSION) \
 	  --build-arg YQ_VERSION=$(YQ_VERSION) \
 	  -t $(DOCKER_IMAGE):$(DOCKER_TAG) .
 
-docker_push:
+push-docker:
 	# Push to DockerHub
 	docker push $(DOCKER_IMAGE):$(DOCKER_TAG)
